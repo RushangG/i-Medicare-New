@@ -26,7 +26,7 @@ export default function ProtectedRoute({ children }) {
             }
         } catch (err) {
             localStorage.clear();
-            console.log(err);
+            //console.log(err);
         }
     };
 

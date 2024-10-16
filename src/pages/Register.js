@@ -25,7 +25,7 @@ const Register = () => {
 
         } catch (error) {
             dispatch(hideLoading());
-            console.log(error);
+            //console.log(error);
             message.error('Something went wrong');
         }
     }

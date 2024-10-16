@@ -11,6 +11,7 @@ const NotificationPage = () => {
     const {user} = useSelector(state => state.user);
     const dispatch = useDispatch();
     const navigate =useNavigate();
+    //console.log(user);
     //handle read notification
     const handleMarkAllRead = async () => {
         try{
@@ -23,12 +24,13 @@ const NotificationPage = () => {
             dispatch(hideLoading);
             if(res.data.message){
                 message.success(res.data.message);
+                window.location.reload();
             }else{
                 message.error(res.data.message)
             }
         }catch(err){
             dispatch(hideLoading);
-            console.log(err);
+            //console.log(err);
             message.error('Something Went Wrong');
         }
     }
@@ -44,12 +46,13 @@ const NotificationPage = () => {
             dispatch(hideLoading);
             if(res.data.message){
                 message.success(res.data.message);
+                window.location.reload();
             }else{
                 message.error(res.data.message)
             }
         }catch(err){
             dispatch(hideLoading);
-            console.log(err);
+            //console.log(err);
             message.error('Something Went Wrong');
         }
     }
@@ -65,7 +68,7 @@ const NotificationPage = () => {
                     user?.notification.map(notificationMsg => (
                         <div className='card' style={{cursor: "pointer"}}>
                             <div className='card-text' onClick={() => navigate('notificationMsg.onClickPath')}>
-                                {notificationMsg.message}
+                                {notificationMsg.messgae}
                             </div>
                         </div>
                     ))
@@ -80,7 +83,7 @@ const NotificationPage = () => {
                     user?.seenNotification.map(notificationMsg => (
                         <div className='card' style={{cursor: "pointer"}}>
                             <div className='card-text' onClick={() => navigate('notificationMsg.onClickPath')}>
-                                {notificationMsg.message}
+                                {notificationMsg.messgae}
                             </div>
                         </div>
                     ))

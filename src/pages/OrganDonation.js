@@ -8,7 +8,7 @@ const OrgansDonation = () => {
 
     // Handle form submission
     const handleFinish = (values) => {
-        console.log(values);
+        //console.log(values);
     };
 
     return (

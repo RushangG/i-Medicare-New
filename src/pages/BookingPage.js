@@ -28,7 +28,7 @@ const BookingPage = () => {
                 setDoctor(res.data.data);
             }
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     }
     //Booking Function
@@ -39,7 +39,7 @@ const BookingPage = () => {
                 return alert('Date & Time Required')
             }
             dispatch(showLoading())
-            const res = axios.post('/api/v1/user/book-appointment', {
+            const res = await axios.post('/api/v1/user/book-appointment', {
                 doctor_id: params.doctorId,
                 user_id: user._id,
                 doctorInfo: doctor,
@@ -57,7 +57,7 @@ const BookingPage = () => {
             }
         }catch(err){
             dispatchEvent(hideLoading());
-            console.log(err);
+            //console.log(err);
         }
     }
 
@@ -85,7 +85,7 @@ const BookingPage = () => {
             dispatch(hideLoading())
         }catch(err){
             dispatch(hideLoading())
-            console.log(err);
+            //console.log(err);
 
         }
     }
@@ -95,7 +95,8 @@ const BookingPage = () => {
 
   return (
     <Layout>
-        <h1>BookingPage</h1>
+        <center>
+        <h2>Appointment Booking Page</h2><br/><br/>
         <div className='container m-2'>
             {doctor && (
                 <div>
@@ -108,7 +109,7 @@ const BookingPage = () => {
                             //setIsAvailable(false) 
                             setDate(moment(value).format('DD-MM-YYYY'))
                         } }/>
-                        <TimePicker aria-required={true} className='m-3' format="HH:mm" onChange={(value) => {
+                        <TimePicker aria-required={true} className='m-2' format="HH:mm" onChange={(value) => {
                             //setIsAvailable(false)
                             setTime(
                                 moment(value).format('HH:mm')
@@ -116,10 +117,14 @@ const BookingPage = () => {
                         } } />
                         <button className='btn btn-primary mt-2' onClick={handleAvailabilty}>Check Availability</button>
                         <button className='btn btn-dark mt-2' onClick={handleBooking}>Book Now</button>
+                        {/* {isAvailable && (
+                            
+                        )} */}
                     </div>
                 </div>
             )}
         </div>
+        </center>
     </Layout>
     
   )

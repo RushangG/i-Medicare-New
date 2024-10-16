@@ -16,7 +16,7 @@ const ApplyDoctor = () => {
     //handle form
     const handleFinish = async (values) => {
         try{
-            console.log(values);
+            //console.log(values);
             dispatch(showLoading());
             const res  = await axios.post('/api/v1/user/apply-doctor', {...values, userId: user._id}, {
                  headers:{
@@ -32,7 +32,7 @@ const ApplyDoctor = () => {
             }
         }catch(err){
             dispatch(hideLoading());
-            console.log(err);
+            //console.log(err);
             message.error('Something Went Wrong')
         }
     }

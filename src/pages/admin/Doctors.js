@@ -19,12 +19,12 @@ const Doctors = () => {
         setDoctors(res.data.data)
       }
     }catch(e){
-      console.log(e)
+      //console.log(e)
     }
   }
 
   const handleAccountStatus = async (record, status) => {
-    console.log(record);
+    //console.log(record);
     try{
       const res = await axios.post('/api/v1/admin/changeAccountStatus', {
         doctorId: record._id,

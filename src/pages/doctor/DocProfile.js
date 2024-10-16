@@ -17,7 +17,7 @@ const DocProfile = () => {
     //handle form
     const handleFinish = async (values) => {
       try{
-          console.log(values);
+          //console.log(values);
           dispatch(showLoading());
           const res  = await axios.post('/api/v1/doctor/updateProfile', {
             ...values, 
@@ -40,13 +40,13 @@ const DocProfile = () => {
           }
       }catch(err){
           dispatch(hideLoading());
-          console.log(err);
+          //console.log(err);
           message.error('Something Went Wrong')
       }
   }
 
     //getDoctorInfo
-    console.log(params.id);
+    //console.log(params.id);
     const getDoctorInfo = async () => {
         try{
             const res = await axios.post('/api/v1/doctor/getDoctorInfo', {
@@ -61,7 +61,7 @@ const DocProfile = () => {
                 setDoctor(res.data.doctor)
             }
         }catch(err){
-            console.log(err);
+            //console.log(err);
         }
     }
 

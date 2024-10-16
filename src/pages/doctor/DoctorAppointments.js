@@ -19,7 +19,7 @@ const DoctorAppointments = () => {
                 setAppointments(res.data.data)
             }
         }catch(err){
-            console.log(err);
+            //console.log(err);
         }
     }
 
@@ -29,6 +29,7 @@ const DoctorAppointments = () => {
 
     const handleStatus = async (record, status) => {
         try{
+            //console.log(record);
             const res = await axios.post('/api/v1/doctor/update-status', {
                 appointmentId: record._id,
                 status
@@ -42,7 +43,7 @@ const DoctorAppointments = () => {
                 getAppointments()
             }
         }catch(err){
-            console.log(err);
+            //console.log(err);
             message.error('Something Went Wrong')
         }
     }
