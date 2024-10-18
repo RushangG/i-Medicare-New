@@ -124,10 +124,10 @@ const DocProfile = () => {
                       </Form.Item>
                   </Col>
                   <Col xs={24} md={24} lg={8}>
-                      <Form.Item label="Timings" name="timings" required>
-                          <TimePicker.RangePicker format="HH:mm"/>
-                      </Form.Item>  
-                  </Col>
+                            <Form.Item label="Timings" name="timings" rules={[{ required: true }]}>
+                                <TimePicker.RangePicker format="HH:mm" />
+                            </Form.Item>
+                    </Col>
                   <Col xs={24} md={24} lg={8}></Col>
                   <Col xs={24} md={24} lg={8}>
                       <button className='btn btn-primary form-btn' type="submit">Update</button>

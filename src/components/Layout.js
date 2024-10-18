@@ -34,6 +34,21 @@ const doctorMenu = [
         path: `/doctor/DocProfile/${user?._id}`,
         icon: 'fa-solid fa-user'
     },
+    {
+        name: 'Add Records',
+        path: `/doctor/AddRecords`,
+        icon: 'fa-solid fa-user'
+    },
+    {
+        name: 'Pation Records',
+        path: `/admin/allmedicalhistory`,
+        icon: 'fa-solid fa-user'
+    },
+    {
+        name: 'OrganDonationsList',
+        path: '/admin/organdonationsdetails',
+        icon: 'fa-solid fa-user'
+    },
 ]
 
     //rendering menu list

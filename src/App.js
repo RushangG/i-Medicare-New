@@ -16,6 +16,11 @@ import OrganDonation from './pages/OrganDonation';
 import BookingPage from './pages/BookingPage';
 import Appointments from './pages/Appointments';
 import DoctorAppointments from './pages/doctor/DoctorAppointments';
+import MedicalHistory from './pages/MedicalHistory';
+import AddRecords from './pages/doctor/AddRecords';
+import AllMedicalHistory from './pages/admin/AllMedicalHistory';
+import OrganDonationDetails from './pages/admin/OrganDonationDetails';
+
 
 function App() {
   const { loading } = useSelector((state) => state.alert);
@@ -49,6 +54,16 @@ function App() {
                 <Doctors />
               </ProtectedRoute>
             } />
+              <Route path="/admin/AllMedicalHistory" element={
+              <ProtectedRoute>
+                <AllMedicalHistory />
+              </ProtectedRoute>
+            } />
+              <Route path="/admin/OrganDonationsDetails" element={
+              <ProtectedRoute>
+                <OrganDonationDetails />
+              </ProtectedRoute>
+            } />
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Profile />
@@ -59,6 +74,11 @@ function App() {
                 <DocProfile />
               </ProtectedRoute>
             } />
+             <Route path="/doctor/AddRecords" element={
+              <ProtectedRoute>
+                <AddRecords />
+              </ProtectedRoute>
+            } />
             <Route path="/notification" element={
               <ProtectedRoute>
                 <NotificationPage />
@@ -67,6 +87,11 @@ function App() {
             <Route path="/organ-donate" element={
               <ProtectedRoute>
                 <OrganDonation />
+              </ProtectedRoute>
+            } />
+             <Route path="/medical-history" element={
+              <ProtectedRoute>
+                <MedicalHistory />
               </ProtectedRoute>
             } />
             <Route path="/login" element={

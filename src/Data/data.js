@@ -52,5 +52,20 @@ export const adminMenu = [
         path: '/profile',
         icon: 'fa-solid fa-user'
     },
+    {
+        name: 'Add Records',
+        path: `/doctor/AddRecords`,
+        icon: 'fa-solid fa-user'
+    },
+    {
+        name: 'MedicalHistory',
+        path: '/admin/allmedicalhistory',
+        icon: 'fa-solid fa-user'
+    },
+    {
+        name: 'OrganDonationsList',
+        path: '/admin/organdonationsdetails',
+        icon: 'fa-solid fa-user'
+    },
 
 ]
